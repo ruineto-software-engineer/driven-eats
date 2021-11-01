@@ -153,10 +153,22 @@ function replace_order_items() {
     const confirm_order_items = confirm_order.querySelector(".confirm-order-items-name");
 
     const title_product = document.querySelectorAll(".selected .card-product-title");
+    
+    let tile_first_product = null;
+    let tile_second_product = null;
+    let tile_third_product = null;
 
-    let tile_first_product = title_product[0].innerText;
-    let tile_second_product = title_product[1].innerText;
-    let tile_third_product = title_product[2].innerText;
+    if(title_product[0] !== undefined){
+        tile_first_product = title_product[0].innerText;
+    }
+
+    if(title_product[1] !== undefined){
+        tile_second_product = title_product[1].innerText;
+    }
+   
+    if(title_product[2] !== undefined){
+        tile_third_product = title_product[2].innerText;
+    }
 
     // console.log(tile_first_product);
     // console.log(tile_second_product);
@@ -180,13 +192,37 @@ function replace_order_values() {
 
     const price_product = document.querySelectorAll(".selected .card-product-price");
 
-    let price_first_product_custom = price_product[0].innerText.replace("R$ ","");
-    let price_second_product_custom = price_product[1].innerText.replace("R$ ","");
-    let price_third_product_custom = price_product[2].innerText.replace("R$ ","");
+    let price_first_product_custom = null;
+    let price_second_product_custom = null;
+    let price_third_product_custom = null;
 
-    let price_first_product = parseFloat(price_product[0].innerText.replace("R$ ","").replace(",","."));
-    let price_second_product = parseFloat(price_product[1].innerText.replace("R$ ","").replace(",","."));
-    let price_third_product = parseFloat(price_product[2].innerText.replace("R$ ","").replace(",","."));
+    if(price_product[0] !== undefined){
+        price_first_product_custom = price_product[0].innerText.replace("R$ ","");
+    }
+
+    if(price_product[1] !== undefined){
+        price_second_product_custom = price_product[1].innerText.replace("R$ ","");
+    }
+   
+    if(price_product[2] !== undefined){
+        price_third_product_custom = price_product[2].innerText.replace("R$ ","");
+    }
+
+    let price_first_product = null;
+    let price_second_product = null;
+    let price_third_product = null;
+
+    if(price_product[0] !== undefined){
+        price_first_product = parseFloat(price_product[0].innerText.replace("R$ ","").replace(",","."));
+    }
+
+    if(price_product[1] !== undefined){
+        price_second_product = parseFloat(price_product[1].innerText.replace("R$ ","").replace(",","."));
+    }
+   
+    if(price_product[2] !== undefined){
+        price_third_product = parseFloat(price_product[2].innerText.replace("R$ ","").replace(",","."));
+    }
 
     let total = (price_first_product + price_second_product + price_third_product).toFixed(2);
 
