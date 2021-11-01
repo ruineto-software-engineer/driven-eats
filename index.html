@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Required fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- favicon -->
+    <link rel="icon" sizes="192x192" href="./assets/img/favicon.png">
+    <title>DrivenEats</title>
+</head>
+<body>
+    <section class="confirm-order">
+        <div class="confirm-order-content">
+            <div class="confirm-order-title">
+                Confirme seu pedido
+            </div><!--confirm-order-title-->
+            <div class="confirm-order-items">
+                <div class="confirm-order-items-name">
+                    <!--first-product-item-->
+                    <p class="first-product-item">#N/D</p>
+
+                    <!--second-product-item-->
+                    <p class="second-product-item">#N/D</p>
+
+                    <!--third-product-item-->
+                    <p class="third-product-item">#N/D</p>
+
+                    <!--bold-->
+                    <p class="bold">TOTAL</p>
+                </div><!--confirm-order-items-name-->
+                <div class="confirm-order-items-value">
+                    <!--first-product-item-value-->
+                    <p class="first-product-item-value">#N/D</p>
+
+                    <!--second-product-item-value-->
+                    <p class="second-product-item-value">#N/D</p>
+
+                    <!--third-product-item-value-->
+                    <p class="third-product-item-value">#N/D</p>
+
+                    <!--total-product-items-value-->
+                    <p class="total-product-items-value bold">#N/D</p>
+                </div><!--confirm-order-items-value-->
+            </div><!--confirm-order-items-->
+            <div class="confirm-order-buttons">
+                <button class="confirm-order-first-button" onclick="send_request()">
+                    Tudo certo, pode pedir!
+                </button><!--confirm-order-first-button-->
+                <button class="confirm-order-second-button" onclick="send_cancel()">
+                    Cancelar
+                </button><!--confirm-order-second-button-->
+            </div><!--confirm-order-buttons-->
+        </div><!--confirm-order-content-->
+    </section><!--confirm-order-->
+
+    <header class="header">
+        <div class="header-content">
+            <!--band-title-->
+            <h1 class="band-title">DrivenEats</h1>
+
+            <!--brand-subtitle-->
+            <span class="brand-subtitle">Sua comida em 6 minutos</span>
+        </div><!--header-content-->
+    </header><!--header-->
+
+    <main class="container" onclick="total_price()">
+        <section class="content" onclick="enabled_button()">
+            <div class="row-products dishes">
+                <!--row-title-->
+                <h2 class="row-title">Primeiro, seu prato</h2>
+                <div class="row-content">
+                    <div class="card-product" onclick="selected_first(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/dishes/frango.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Frango ao Molho</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Frango completo. 2 porções, médio</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 15,50</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_first(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/dishes/panelada.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Panelada</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Panelada completa. 2 porções, grande</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 25,00</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_first(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/dishes/vatapa.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Vatapá</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Vatapá completo. 6 porções, médio</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 14,90</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_first(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/dishes/bobo-camarao.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Bobó de Camarão</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Bobó completo. 5 porções, grande</p>
+                                                    
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 40,80</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_first(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/dishes/pacoca-carne-seca.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Paçoca</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Paçoca completa. 4 porções, grande</p>
+                                                    
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 30,10</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_first(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/dishes/moqueca.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Moqueca de Cação</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Moqueca completa. 4 porções, média</p>
+                                                    
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 47,00</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+                    
+                    <div class="card-product" onclick="selected_first(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/dishes/peixada-ao-molho-de-coco-especial.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Pexada ao Molho</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Pexada completa. 5 porções, grande</p>
+                                                    
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 60,50</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+                </div><!--row-content-->
+            </div><!--row-products-->
+
+            <div class="row-products drinks">
+                <!--row-title-->
+                <h2 class="row-title">Agora, sua bebida</h2>
+                <div class="row-content bebida">
+                    <div class="card-product" onclick="selected_second(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/drinks/alua.png">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Aluá</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Conteúdo de 1L. Á base de milho</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 20,90</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_second(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/drinks/cachaca.png">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Cachaça</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Conteúdo de 1L. Cachaça pura</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 40,00</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_second(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/drinks/cachimbo.png">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Cachimbo</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Jarra de 500mL. Comum do sertão</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 16,40</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_second(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/drinks/licor.png">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Licor</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Conteúdo de 600mL. Levemente doce</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 8,60</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_second(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/drinks/melaco-de-cana.png">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Melaço de Cana</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Copo 350mL. Caldo de cana concentrado</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 4,90</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_second(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/drinks/suco-de-umbu-caja.png">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Suco de Cajá</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Copo 350mL. Uma delícia tropical</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 4,90</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_second(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/drinks/tiquira.png">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Tiquira</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Conteúdo de 1L. Bebida tropical</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 4,90</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+                </div><!--row-content-->
+            </div><!--row-products-->
+            
+            <div class="row-products desserts mb-27">
+                <!--row-title-->
+                <h2 class="row-title">Por fim, sua sobremesa</h2>
+                <div class="row-content dessert">
+                    <div class="card-product" onclick="selected_third(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/desserts/bolo-de-rolo-doces.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Bolo de Rolo</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Serve 5 pessoas. Patrimônio cultural</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 26,90</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_third(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/desserts/cocada-doces-tipicos.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Cocada</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">5 unidades. Tradição nordestina</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 15,00</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_third(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/desserts/doce-de-banana-com-creme-de-leite-e-suspiro.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Doce de Banana</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Serve 10 pessoas. Presente da Baía</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 24,65</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_third(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/desserts/pamonha-doce-com-coco.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Pamonha Doce</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">3 unidades. Importada de Goiás</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 15,80</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_third(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/desserts/pudim-de-tapioca.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Pudim de Tapioca</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Serve 4 pessoas. Cobertura de coco</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 28,90</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_third(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/desserts/torta-bulgara.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Torta de Bulgara</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">Serve 5 pessoas. Das terras dos orixás</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 30,00</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->
+
+                    <div class="card-product" onclick="selected_third(this)">
+                        <div class="card-product-content">
+                            <!--card-product-img-->
+                            <img class="card-product-img" src="./assets/img/desserts/sequilhos-com-doce-de-leite-doces.jpg">
+                            <div class="card-product-content-text">
+                                <!--card-product-title-->
+                                <h4 class="card-product-title">Sequilhos</h4>
+
+                                <!--card-product-description-->
+                                <p class="card-product-description">10 unidades. Derrete na boca</p>
+                                
+                                <div class="card-product-footer">
+                                    <!--card-product-price-->
+                                    <p class="card-product-price">R$ 13,00</p>
+
+                                    <!--checkmark-circle--->
+                                    <ion-icon class="checkmark-circle" name="checkmark-circle"></ion-icon>
+                                </div><!--card-product-footer-->
+                            </div><!--card-product-content-text-->
+                        </div><!--card-product-content-->
+                    </div><!--card-product-->         
+                </div><!--row-content-->
+            </div><!--row-products-->  
+        </section><!--content-->
+    </main><!--container-->
+    
+    <div class="bottom-bar">
+        <button class="btn-bottom-bar" onclick="send_request_auxiliary()">
+            Selecione os 3 itens
+            para fechar o pedido
+        </button><!--btn-bottom-bar-->
+    </div><!--bottom-bar-->
+
+    <!-- JavaScript -->
+    <script src="./assets/js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
